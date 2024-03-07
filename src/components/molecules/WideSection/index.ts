@@ -1,0 +1,1 @@
+export { WideSection } from './WideSection';

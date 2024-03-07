@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_7_미래" data-name="7 미래" xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="12" y="32.5" width="16" height="5" rx="1" ry="1"/>
+  <rect class="cls-1" x="13" y="30.5" width="14" height="2" rx="1" ry="1"/>
+  <polygon class="cls-1" points="26 30.5 14 30.5 17 11.5 23 11.5 26 30.5"/>
+  <rect class="cls-1" x="16" y="9.5" width="8" height="2" rx="1" ry="1"/>
+  <polygon class="cls-1" points="24 2.5 24 5.5 23 9.5 17 9.5 16 5.5 16 2.5 18 2.5 18 5.5 19 5.5 19 2.5 21 2.5 21 5.5 22 5.5 22 2.5 24 2.5"/>
+</svg>

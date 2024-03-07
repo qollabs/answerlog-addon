@@ -1,0 +1,1 @@
+export { Mall } from './Mall';

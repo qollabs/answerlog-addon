@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_4_요즘" data-name="4 요즘" xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 40 40">
+  <path d="M25,5.03V37.03H15V5.03h10m0-1H15c-.55,0-1,.45-1,1V37.03c0,.55,.45,1,1,1h10c.55,0,1-.45,1-1V5.03c0-.55-.45-1-1-1h0Z"/>
+  <path d="M23,7.03v4h-6V7.03h6m1-1H16v6h8V6.03h0Z"/>
+  <path d="M23,14.03v4h-6v-4h6m1-1H16v6h8v-6h0Z"/>
+  <path d="M23,21.03v4h-6v-4h6m1-1H16v6h8v-6h0Z"/>
+  <path d="M23,28.03v4h-6v-4h6m1-1H16v6h8v-6h0Z"/>
+  <path d="M21.85,3.28h0l-3.71,1.5h0l3.71-1.5m.55-1.3l-5.56,2.25,.75,1.85,5.56-2.25-.75-1.85h0Z"/>
+</svg>

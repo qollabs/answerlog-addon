@@ -1,0 +1,1 @@
+export { PurchaseHistoryDetail } from './PurchaseHistoryDetail';

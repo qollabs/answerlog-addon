@@ -1,0 +1,1 @@
+export { MallDetail } from './MallDetail';

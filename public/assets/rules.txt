@@ -1,0 +1,25 @@
+
+
+* Assets
+1. images : jpg, png등의 이미지. 사이즈는 120*120 기준 최소 패딩 16으로 여백을 둔다.
+2. icons : height와 width, fill을 current로(이거 안해도 width 조정 먹히는지 확인)
+
+
+* Components
+
+1. atoms : HTML의 기본 태그 이거나 그에 준하는 기본 요소.
+2. molecules : atoms 한 개 이상으로 만들어진 응용 요소. 구조적 용도가 명확하다.
+3. organisms : atom과 molecule로 이루어진 응용 요소. 독립적이고 구체적인 구축 목적이 있다.
+4. templates : 한 페이지 전체. 백엔드와의 api 통신이 이루어진다.
+
+
+* Constants
+1. dummyObjects : state 최초 선언시 undefined를 없애기 위함.
+2. globalContants : 복수개의 component에서 이용하는 constant
+
+* Functions
+ - ~~er/or식 명명 권장
+ - react 및 custom hooks를 이용하지 않는다.(예외는 있음)
+
+* Hooks
+ - 다른 hooks를 이용하고, dependency 설정이 가능
