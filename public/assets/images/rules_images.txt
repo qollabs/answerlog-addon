@@ -1,3 +1,0 @@
-1. 이름에는 언더스코어
-2. png 200*200을 기준으로
-3. svg 24*24를 기준으로 width height fill 모두 current
