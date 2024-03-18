@@ -1,1 +1,0 @@
-export { Qna } from './Qna';

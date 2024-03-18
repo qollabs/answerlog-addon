@@ -1,1 +1,0 @@
-export { CheckInvitation } from './CheckInvitation';

@@ -1,1 +1,0 @@
-export { FailPurchase } from './FailPurchase';

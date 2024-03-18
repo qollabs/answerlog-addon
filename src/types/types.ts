@@ -11,9 +11,15 @@ declare global {
     }
 }
 
+enum InviteStatusEnum {
+    Denied = 0,
+    Accepted = 2,
+    Deleted = 3,
+} //0:승락안됨 2: 승락됨 3:차단(삭제)됨
+
 export interface LinkedUserType {
     id: string | null;
-    invite_status: number; //0:승락안됨 2: 승락됨 3:차단(삭제)됨
+    invite_status: InviteStatusEnum;
     user_link_id: string;
     name: string | null;
     birth_date: string | null;
@@ -63,6 +69,7 @@ export interface CouponType {
     image_url: string | null;
     place: string;
     options: string[];
+    linked_gifts: string[];
     is_used: boolean;
     deployed_at: string;
     expired_at: string;
@@ -186,6 +193,15 @@ export type CountryCodeType =
     | '358'
     | '36';
 
+enum QuestionTypeEnum {
+    SubjectiveShort,
+    SubjectiveLong,
+    ScoreLevel, // 0,25,50,75,100 중 택1
+    ChoiceMultiple, // 1개 선택 또는 기타 선택 불가능
+    ChoiceSingle, // 기타 선택 가능
+    ScoreLinear, // 0~100
+}
+
 export interface IQuestion {
     _id: string;
     set_id: number;
@@ -194,7 +210,8 @@ export interface IQuestion {
     category: number;
     topic: number;
     sub_topic: number[];
-    type: number; //0 : 단답형 1 : 서술형 2: 단수선택형 3:복수선택형 4  : 혼합형
+    type: QuestionTypeEnum; //0 : 단답형 1 : 서술형 2: 단수선택형 3:복수선택형 4  : 혼합형
+    // 0 : 주관식단답형 1 : 주관식서술형 2 : 점수척도형 3 : 객관식복수형 4 : 객관식단수형 5 : 점수수치형
     content: string;
     options: string[] | null;
     target_relation: number[];
@@ -212,7 +229,6 @@ export interface IQuestionAnswered {
 export interface IAnswer {
     answered_at: string | null;
     answered_content: string[];
-    entertainments: IRecContent[];
 }
 
 export interface QuestionMessageType {

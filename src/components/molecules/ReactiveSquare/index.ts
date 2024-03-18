@@ -1,1 +1,0 @@
-export { ReactiveSquare } from './ReactiveSquare';

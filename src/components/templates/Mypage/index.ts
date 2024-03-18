@@ -1,1 +1,0 @@
-export { Mypage } from './Mypage';
