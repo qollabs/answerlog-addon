@@ -18,8 +18,3 @@ export const MainLayoutContainer = styled(Container)<{
     ${({ whiteBackground }) =>
         whiteBackground ? WHITE_BACKGROUND : YELLOW1_BACKGROUND}
 `;
-
-export const BottomButtonContainer = styled(Container)`
-    /* gap: 16px; */
-    padding: 16px 40px 48px 40px;
-`;

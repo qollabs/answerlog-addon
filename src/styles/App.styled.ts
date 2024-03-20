@@ -6,15 +6,10 @@ export const AppContainer = styled.div`
     justify-content: flex-start;
     align-items: center;
     width: 100vw;
-    // max-width: 420px;
+    max-width: 420px;
     height: 100vh;
     height: 100dvh;
-    // max-height: 1050px;
     overflow: hidden;
-    // @media (min-height: 1050px) {
-    //     margin: 40px;
-    //     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-    // }
 `;
 
 export const Gap = styled.div<{ width?: string; height?: string }>`

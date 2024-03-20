@@ -7,6 +7,7 @@ import {
     ORANGE2_BACKGROUND,
     TEXT_ELLIPSIS,
     TEXT_HIDDEN,
+    WHITE_BACKGROUND,
 } from '@Styles/themes';
 import styled, { css } from 'styled-components';
 
@@ -19,6 +20,7 @@ export const SelectBox = styled(RowContainer)<{
     disabled?: boolean;
     padding?: string;
 }>`
+    ${WHITE_BACKGROUND}
     padding: ${({ padding }) => padding || '16px 8px'};
     border: 1px solid ${GRAY3};
     border-radius: 8px;

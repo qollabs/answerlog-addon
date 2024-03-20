@@ -48,3 +48,13 @@ button {
     src: url('../../public/assets/fonts/NanumSquareNeo-Variable.woff2')
         format('woff2-variations');
 }
+
+@font-face {
+    font-family: 'Product Sans';
+    src:url('../../public/assets/fonts/Product\ Sans\ Regular.ttf')format('ttf');
+}
+
+@font-face {
+    font-family: 'SF-Pro';
+    src:url('../../public/assets/fonts/SF-Pro.ttf')format('ttf');
+}

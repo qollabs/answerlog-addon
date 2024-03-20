@@ -597,7 +597,7 @@ export const couponCodeTranslator = (code: string) => {
             return '65c43450a3fa72571ce6b317';
         // return '65b8c66617169b0592698c57';
         default:
-            return '';
+            return code;
     }
 };
 

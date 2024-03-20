@@ -6,52 +6,15 @@ import { AppContext } from '@Pages/_app';
 
 interface MainLayoutProp {
     children?: React.ReactNode;
-    title?: string;
-    showLogo?: boolean;
-    goBackHandler?: () => void;
-    hideBackButton?: boolean;
-    hideBottomNav?: boolean;
-    hideTopNav?: boolean;
-    whiteBackground?: boolean;
-    hideActionIcons?: boolean;
-    subNav?: JSX.Element;
-    layoutRef?: RefObject<HTMLDivElement>;
 }
 
-export const MainLayout = ({
-    children,
-    title,
-    showLogo,
-    goBackHandler,
-    hideBackButton,
-    hideBottomNav,
-    hideTopNav,
-    whiteBackground,
-    hideActionIcons,
-    subNav,
-    layoutRef,
-}: MainLayoutProp) => {
+export const MainLayout = ({ children }: MainLayoutProp) => {
     const { isInputFocused } = useContext(AppContext);
     return (
         <MainLayoutWrapper>
-            {!hideTopNav && (
-                <TopNav
-                    title={title}
-                    showLogo={showLogo}
-                    goBackHandler={goBackHandler}
-                    hideBackButton={hideBackButton}
-                    hideActionIcons={hideActionIcons}
-                    whiteBackground={whiteBackground}
-                    subNav={subNav}
-                />
-            )}
-            <MainLayoutContainer
-                whiteBackground={whiteBackground}
-                ref={layoutRef}
-            >
-                {children}
-            </MainLayoutContainer>
-            {!hideBottomNav && !isInputFocused && <BottomNav />}
+            <TopNav />
+            <MainLayoutContainer>{children}</MainLayoutContainer>
+            {!isInputFocused && <BottomNav />}
         </MainLayoutWrapper>
     );
 };
