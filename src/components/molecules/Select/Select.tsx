@@ -65,7 +65,7 @@ export const Select = ({
                 ) : (
                     <Text size={textSize || 'b1'}>{selected}</Text>
                 )}
-                <CaretDownIcon color={GRAY3} />
+                <CaretDownIcon width="24px" height="24px" color={GRAY3} />
             </SelectBox>
             <BottomDrawer
                 title={label}

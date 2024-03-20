@@ -27,9 +27,8 @@ import {
 import { AppContext } from '@Pages/_app';
 import { Gap } from '@Styles/App.styled';
 import { CSSProperties } from 'styled-components';
-import { useActionOnTouch } from '@Hooks/useActionOnTouch';
 import { Text } from '@Atoms/Typography';
-import { mobileDetector } from '@Functions/browserDetector';
+import { GRAY3 } from '@Styles/colors';
 
 interface TextFieldProp {
     title?: string;
@@ -85,7 +84,6 @@ export const TextField = ({
     actionOnBlur,
 }: TextFieldProp) => {
     const { textSizePref } = useContext(AppContext);
-    const { actionOnTouchEnd, actionOnTouchEndWithEvent } = useActionOnTouch();
 
     const [isFocused, setIsFocused] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -186,16 +184,19 @@ export const TextField = ({
                         {type === 'password' && (
                             <SupportIconButton
                                 onClick={() => setShowPassword(!showPassword)}
-                                onTouchEnd={(e) =>
-                                    actionOnTouchEnd(e, () =>
-                                        setShowPassword(!showPassword),
-                                    )
-                                }
                             >
                                 {showPassword ? (
-                                    <EyeOffIcon width={20} height={20} />
+                                    <EyeOffIcon
+                                        width={20}
+                                        height={20}
+                                        color={GRAY3}
+                                    />
                                 ) : (
-                                    <EyeIcon width={20} height={20} />
+                                    <EyeIcon
+                                        width={20}
+                                        height={20}
+                                        color={GRAY3}
+                                    />
                                 )}
                             </SupportIconButton>
                         )}
@@ -203,14 +204,16 @@ export const TextField = ({
                     </SupportBox>
                 )}
             </TextFieldContainer>
-            {status === 'error' && errorMessage && (
-                <Text size="b2" color="orange3">
-                    {errorMessage}
-                </Text>
-            )}
-            {(helpMessage || (isTextarea && maxTextLength)) && (
+            {(helpMessage ||
+                (isTextarea && maxTextLength) ||
+                (status === 'error' && errorMessage)) && (
                 <TextFieldSubContainer>
-                    {helpMessage && (
+                    {status === 'error' && errorMessage && (
+                        <Text size="b2" color="orange3">
+                            {errorMessage}
+                        </Text>
+                    )}
+                    {helpMessage && !(status === 'error' && errorMessage) && (
                         <HelpTextBox
                             status={status}
                             textSizePref={textSizePref}

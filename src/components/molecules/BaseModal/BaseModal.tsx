@@ -9,11 +9,11 @@ import {
 import { useBodyScrollLock } from '@Hooks/useBodyScrollLock';
 import { Container } from '@Atoms/Container';
 import { Gap } from '@Styles/App.styled';
-import DefaultProfileImage from '@Images/answerlog_icon_logo.png';
 import { ButtonColorType } from '@Atoms/Button/Button.styled';
 import { RowContainer } from '@Atoms/RowContainer';
 import { Button } from '@Atoms/Button';
 import { useOnClickOutside } from '@Hooks/useOnClickOutside';
+import AnswerlogImage from '@Images/images/answerlog.png';
 
 interface BaseModalProp {
     show: boolean;
@@ -74,7 +74,7 @@ export const BaseModal: FC<BaseModalProp> = ({
                 {!hideImage && (
                     <Container>
                         <Image
-                            src={customImage || DefaultProfileImage}
+                            src={customImage || AnswerlogImage}
                             alt=""
                             width={80}
                             height={80}

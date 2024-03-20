@@ -13,7 +13,11 @@ import {
     GRAY3,
 } from '@Styles/colors';
 import { RowContainer } from '@Atoms/RowContainer';
-import { GRAY0_BACKGROUND, GRAY2_BACKGROUND } from '@Styles/themes';
+import {
+    GRAY0_BACKGROUND,
+    GRAY2_BACKGROUND,
+    WHITE_BACKGROUND,
+} from '@Styles/themes';
 
 export type TextFieldStatusType = 'default' | 'error';
 
@@ -37,6 +41,7 @@ export const TextFieldContainer = styled(RowContainer)<{
     ${({ textSizePref }) => textSizePicker(textSizePref, 'b1')}
     padding: 16px 8px;
     border: 1px solid ${GRAY3};
+    ${WHITE_BACKGROUND}
     ${({ isTextarea }) =>
         isTextarea &&
         css`

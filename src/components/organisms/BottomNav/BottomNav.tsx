@@ -1,89 +1,65 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-import HomeIcon from '@Images/icons/house_alt.svg';
-import HomeFilledIcon from '@Images/icons/house_alt_filled.svg';
-import ChatIcon from '@Images/icons/chat.svg';
-import ChatFilledIcon from '@Images/icons/chat_filled.svg';
-import ReportIcon from '@Images/icons/file_text.svg';
-import ReportFilledIcon from '@Images/icons/file_text_filled.svg';
-import GiftIcon from '@Images/icons/gift.svg';
-import GiftFilledIcon from '@Images/icons/gift_filled.svg';
-import BookOpenIcon from '@Images/icons/book_open.svg';
-import BookOpenFilledIcon from '@Images/icons/book_open_filled.svg';
-import { BottomNavButton, BottomNavWrapper } from './BottomNav.styled';
+import HouseOutlinedIcon from '@Images/icons/house_outlined.svg';
+import HouseFilledIcon from '@Images/icons/house_filled.svg';
+import SecurityOutlinedIcon from '@Images/icons/security_outlined.svg';
+import SecurityFilledIcon from '@Images/icons/security_filled.svg';
+import BinXOutlinedIcon from '@Images/icons/bin_x_outlined.svg';
+import BinXFilledIcon from '@Images/icons/bin_x_filled.svg';
+
+import { BottomNavButton, BottomNavContainer } from './BottomNav.styled';
 import { Gap } from '@Styles/App.styled';
 import { ORANGE2 } from '@Styles/colors';
+import { Text } from '@Atoms/Typography';
+import { pathnameTranslator } from '@Functions/pathnameTranslator';
 
 export const BottomNav = () => {
     const router = useRouter();
     const [currentMenu, setCurrentMenu] = useState<string>('');
 
     useEffect(() => {
-        setCurrentMenu(router.pathname.split('/')[1]);
+        setCurrentMenu(router.pathname.split('/')[1] || 'home');
     }, []);
 
     return (
-        <BottomNavWrapper>
+        <BottomNavContainer>
             <BottomNavButton
-                onClick={() => router.push('/landing')}
-                active={currentMenu === 'landing'}
+                onClick={() => router.push('/')}
+                active={currentMenu === 'home'}
             >
-                {currentMenu === 'landing' ? (
-                    <HomeFilledIcon width="24" height="24" />
+                {currentMenu === 'home' ? (
+                    <HouseFilledIcon width="24" height="24" />
                 ) : (
-                    <HomeIcon width="24" height="24" />
-                )}
-                <Gap height="4px" />홈
-            </BottomNavButton>
-            <BottomNavButton
-                onClick={() => router.push('/qna')}
-                active={currentMenu === 'qna'}
-            >
-                {currentMenu === 'qna' ? (
-                    <ChatFilledIcon width="24" height="24" />
-                ) : (
-                    <ChatIcon width="24" height="24" />
+                    <HouseOutlinedIcon width="24px" height="24" />
                 )}
                 <Gap height="4px" />
-                문답
+                <Text size="b2">{pathnameTranslator('home')}</Text>
             </BottomNavButton>
             <BottomNavButton
-                onClick={() => router.push('/answer-log')}
-                active={currentMenu === 'answer-log'}
+                onClick={() => router.push('/policy')}
+                active={currentMenu === 'policy'}
             >
-                {currentMenu === 'answer-log' ? (
-                    <BookOpenFilledIcon width="24" height="24" />
+                {currentMenu === 'policy' ? (
+                    <SecurityFilledIcon width="24" height="24" />
                 ) : (
-                    <BookOpenIcon width="24" height="24" />
+                    <SecurityOutlinedIcon width="24" height="24" />
                 )}
                 <Gap height="4px" />
-                답변 모음
+                <Text size="b2">{pathnameTranslator('policy')}</Text>
             </BottomNavButton>
             <BottomNavButton
-                onClick={() => router.push('/report')}
-                active={currentMenu === 'report'}
+                onClick={() => router.push('/withdraw')}
+                active={currentMenu === 'withdraw'}
             >
-                {currentMenu === 'report' ? (
-                    <ReportFilledIcon width="24" height="24" />
+                {currentMenu === 'withdraw' ? (
+                    <BinXFilledIcon width="24" height="24" />
                 ) : (
-                    <ReportIcon width="24" height="24" />
+                    <BinXOutlinedIcon width="24" height="24" />
                 )}
                 <Gap height="4px" />
-                리포트
+                <Text size="b2">{pathnameTranslator('withdraw')}</Text>
             </BottomNavButton>
-            <BottomNavButton
-                onClick={() => router.push('/mall')}
-                active={currentMenu === 'mall'}
-            >
-                {currentMenu === 'mall' ? (
-                    <GiftFilledIcon width="24" height="24" />
-                ) : (
-                    <GiftIcon width="24" height="24" />
-                )}
-                <Gap height="4px" />
-                앤서록 몰
-            </BottomNavButton>
-        </BottomNavWrapper>
+        </BottomNavContainer>
     );
 };

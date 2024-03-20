@@ -1,58 +1,3 @@
-import { BankCodeType, GenderType, IQnA } from '@Types/types';
-export const bankCodes: BankCodeType[] = [
-    '39',
-    '34',
-    'S8',
-    '12',
-    'SE',
-    'SK',
-    'S5',
-    'SM',
-    '32',
-    'S3',
-    '45',
-    '64',
-    'SN',
-    'S2',
-    '88',
-    '48',
-    '27',
-    '20',
-    '71',
-    'S0',
-    'SJ',
-    '50',
-    '37',
-    '35',
-    '90',
-    'SQ',
-    '89',
-    'SB',
-    '토스머니',
-    '92',
-    'ST',
-    'SR',
-    'SH',
-    '81',
-    'S9',
-    'S6',
-    'SG',
-    'SA',
-    '54',
-    'SI',
-    '31',
-    '03',
-    '06',
-    'S4',
-    '02',
-    'SP',
-    'SO',
-    '11',
-    'SL',
-    '23',
-    '07',
-    'SD',
-];
 export const countryNames: string[] = [
     '대한민국',
     '대만',
@@ -134,88 +79,43 @@ export const countryNames: string[] = [
     '호주',
 ];
 
-export const genderOptions: { label: string; value: GenderType }[] = [
-    {
-        label: '남자',
-        value: 'male',
-    },
-    {
-        label: '여자',
-        value: 'female',
-    },
-    {
-        label: '그 외',
-        value: 'etc',
-    },
-];
+class QollabsField {
+    label: string;
+    value: string;
 
-export const questionTypeOptions = [
-    { label: '단답형', value: 0 },
-    { label: '서술형', value: 1 },
-    { label: '단수선택형', value: 2 },
-    { label: '복수선택형', value: 3 },
-    { label: '혼합형', value: 4 },
-];
+    constructor(label: string, value: string) {
+        this.label = label;
+        this.value = value;
+    }
+}
 
-export const relationTypeOptions = [
-    { label: '부모 자녀 관계', value: 0 },
-    { label: '배우자 관계', value: 1 },
-    // { label: '형제 자매 관계', value: 2 },
-    // { label: '친구 관계', value: 3 },
-];
-
-export const relationOptions = [
-    {
-        label: '엄마',
-        value: '엄마',
-    },
-    {
-        label: '아빠',
-        value: '아빠',
-    },
-    {
-        label: '딸',
-        value: '딸',
-    },
-    {
-        label: '아들',
-        value: '아들',
-    },
-];
-export const relationLabels = relationOptions.map((option) => option.label);
-export const relationValues = relationOptions.map((option) => option.value);
-
-export const testUserIds: string[] = [
-    '64fbf509e1b2d0467548a82c', // 레옹님 실서버
-    '653fdcbd90fe71a6cec8d626', // 레옹님 테스트서버
-    '64fb1623e1b2d0467548a822', // 크리스님 실서버
-    '6544fc3c7ea81083f00178f9', // 크리스님 테스트서버
-    '64fbd6f5e1b2d0467548a828', // 샘 실서버
-    '64f9e8e708ba2c613feb678e', // 샘 테스트서버
-    '6509341b22cd03fb5f32045c', // 김팀장님 테스트서버
-    '650beb347ff8c2696649004e', // 김팀장님 실서버
-    '659f69fb3a928a260c29f7b1', // qa 아이폰 실서버
-    '65bb350532684bd9322c69d8', // qa 아이폰 테스트서버
-    '64fa867c764e696b141d6eb5', // 윤희님 실서버
-    '651a51c5ade7938444058c8a', // 윤희님 테스트서버
-    '65898424faedee3167a5c60c', // 존님 실서버
-];
 interface IQollabs {
-    title: string;
-    ceo: string;
-    companyRegistrationNumber: string;
-    address: string;
-    phoneNumber: string;
-    mailOrderBusinessReportNumber: string;
+    title: QollabsField;
+    ceo: QollabsField;
+    companyRegistrationNumber: QollabsField;
+    address: QollabsField;
+    phoneNumber: QollabsField;
+    mailOrderBusinessReportNumber: QollabsField;
+    email: QollabsField;
 }
 
 export const qollabs: IQollabs = {
-    title: '(주)삶의질연구소',
-    ceo: '조기웅',
-    companyRegistrationNumber: '696-81-02910',
-    address: '대전시 유성구 문지로 193 한국과학기술원 진리관 T-139',
-    phoneNumber: '1688-3242',
-    mailOrderBusinessReportNumber: '2023-대전유성-0381',
+    title: new QollabsField('회사명', '(주)삶의질연구소'),
+    ceo: new QollabsField('대표자', '조기웅'),
+    companyRegistrationNumber: new QollabsField(
+        '사업자등록번호',
+        '696-81-02910',
+    ),
+    address: new QollabsField(
+        '주소',
+        '대전시 유성구 문지로 193 한국과학기술원 진리관 T-139',
+    ),
+    phoneNumber: new QollabsField('유선번호', '1688-3242'),
+    mailOrderBusinessReportNumber: new QollabsField(
+        '통신판매업 신고번호',
+        '2023-대전유성-0381',
+    ),
+    email: new QollabsField('이메일', 'info@qollabs.care'),
 };
 
 export const emailDomains = [
